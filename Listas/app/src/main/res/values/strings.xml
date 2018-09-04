@@ -3,4 +3,6 @@
     <string name="id">Id</string>
     <string name="name">Nombre</string>
     <string name="phone">Telefono</string>
+
+    <string name="error_generico">Se presento un error</string>
 </resources>

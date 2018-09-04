@@ -6,7 +6,7 @@ import manuel.com.co.listas.modelo.User;
 
 public interface UserRemoteDataSource {
 
-    void consultarUser();
+    void consultarUser(GetUserCallback callback);
 
     public interface GetUserCallback{
         void onUserLoader(List<User> users);
