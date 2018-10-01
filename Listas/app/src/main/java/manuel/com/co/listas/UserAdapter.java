@@ -35,7 +35,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         User item = items.get(position);
         holder.user_id.setText(item.getId());
         holder.user_name.setText(item.getName());
-        holder.user_phone.setText(item.getPhone());
+        holder.user_email.setText(item.getEmail());
+        holder.user_id_firebase.setText(item.getIdFirebase());
         holder.itemView.setTag(item);
     }
 
@@ -48,14 +49,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         public TextView user_id;
         public TextView user_name;
-        public TextView user_phone;
+        public TextView user_email;
+        public TextView user_id_firebase;
 
         public ViewHolder(final View itemView) {
             super(itemView);
             user_id = (TextView) itemView.findViewById(R.id.user_id);
             user_name = (TextView) itemView.findViewById(R.id.user_name);
-            user_phone = (TextView) itemView.findViewById(R.id.user_phone);
-
+            user_email = (TextView) itemView.findViewById(R.id.user_email);
+            user_id_firebase = (TextView) itemView.findViewById(R.id.user_idfirebase);
         }
     }
 }
