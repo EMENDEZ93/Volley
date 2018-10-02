@@ -16,9 +16,11 @@ import org.json.JSONArray;
 import java.net.URL;
 import java.util.List;
 
+import io.realm.Realm;
 import manuel.com.co.listas.modelo.User;
+import manuel.com.co.listas.modelo.UserRealm;
 
-public class UserDataSource implements UserRemoteDataSource {
+public class UserDataSource implements UserRemoteDataSource, UserDataSourceLocal {
 
     private final static String URL_GET_USER = "https://fire-backend.herokuapp.com/users";
     private Context context;
@@ -64,4 +66,13 @@ public class UserDataSource implements UserRemoteDataSource {
         requestQueue.add(request);
     }
 
+    @Override
+    public void guardarUserLocal(userLocalCallback callback, User user) {
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        UserRealm userRealm = realm.createObject(UserRealm.class);
+        userRealm.setName(user.getName());
+        userRealm.setIdFirebase(user.getIdFirebase());
+        userRealm.setEmail(user.getEmail());
+    }
 }

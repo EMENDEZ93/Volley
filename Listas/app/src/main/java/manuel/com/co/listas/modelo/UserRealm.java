@@ -1,17 +1,15 @@
 package manuel.com.co.listas.modelo;
 
-public class User {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+public class UserRealm extends RealmObject{
+
+    @PrimaryKey
     private String id;
     private String name;
     private String idFirebase;
     private String email;
-
-    public User(String name, String idFirebase, String email){
-        this.name = name;
-        this.idFirebase = idFirebase;
-        this.email = email;
-    }
 
     public String getId() {
         return id;
@@ -44,4 +42,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

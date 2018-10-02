@@ -5,4 +5,5 @@
     <string name="phone">Telefono</string>
 
     <string name="error_generico">Se presento un error</string>
+    <string name="mensaje_generico_guardar">Se ha guardado exitosamente</string>
 </resources>
